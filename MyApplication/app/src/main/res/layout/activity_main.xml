@@ -7,8 +7,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="#63B8FF"
-    tools:context="sg.edu.nus.myapplication.MainActivity">
+    tools:context="sg.edu.nus.myapplication.MainActivity"
+    android:background="@drawable/screen">
 
     <EditText
         android:layout_width="wrap_content"
@@ -40,10 +40,7 @@
         android:text="Login"
         android:id="@+id/bLogin"
         android:layout_below="@+id/etPassword"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/etPassword"
-        android:layout_alignEnd="@+id/etPassword" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -52,5 +49,13 @@
         android:text="Register Here"
         android:id="@+id/tvRegisterHere"
         android:layout_below="@+id/bLogin"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Just Calculate"
+        android:id="@+id/bJustCalc"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>
