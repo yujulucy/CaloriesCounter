@@ -38,26 +38,13 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:id="@+id/etWeight"
-        android:layout_below="@+id/etPortion"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:hint="Serving Weight" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
         android:id="@+id/etEnergy"
-        android:layout_below="@+id/etWeight"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:hint="Energy" />
+        android:hint="Energy"
+        android:layout_below="@+id/etPortion" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -78,12 +65,12 @@
         android:inputType="number"
         android:ems="10"
         android:id="@+id/etFat"
-        android:layout_centerVertical="true"
+        android:hint="Total Fat"
+        android:layout_below="@+id/etProtein"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:hint="Total Fat" />
+        android:layout_alignParentEnd="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -143,11 +130,19 @@
         android:inputType="number"
         android:ems="10"
         android:id="@+id/etSod"
-        android:layout_alignParentBottom="true"
+        android:hint="Sodium"
+        android:layout_below="@+id/etCal"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:hint="Sodium" />
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Food"
+        android:id="@+id/bAdd"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

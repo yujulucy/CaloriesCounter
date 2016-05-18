@@ -17,7 +17,7 @@ public class CalorieData {
         //sodium
         public static final String FOOD_NAME = "food_name";
         public static final String SERVING_PORTION = "portion";
-        public static final String SERVING_WEIGHT = "weight";
+        //public static final String SERVING_WEIGHT = "weight";
         public static final String ENERGY = "energy";
         public static final String PROTEIN = "protein";
         public static final String TOTAL_FAT = "fat";

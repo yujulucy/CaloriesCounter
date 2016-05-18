@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         final EditText etPassword = (EditText) findViewById(R.id.etPassword);
         final Button bLogin = (Button) findViewById(R.id.bLogin);
         final Button bJustCalc = (Button) findViewById(R.id.bJustCalc);
+        final Button bAdd = (Button) findViewById(R.id.bAdd);
         final TextView registerLink = (TextView) findViewById(R.id.tvRegisterHere);
 
         registerLink.setOnClickListener(new View.OnClickListener() {
@@ -27,6 +28,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent registerIntent = new Intent(MainActivity.this, RegisterActivity.class);
                 MainActivity.this.startActivity(registerIntent);
+            }
+        });
+
+        bAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent addIntent = new Intent(MainActivity.this, NewFoodActivity.class);
+                MainActivity.this.startActivity(addIntent);
             }
         });
     }

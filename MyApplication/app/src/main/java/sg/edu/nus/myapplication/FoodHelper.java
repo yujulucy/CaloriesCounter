@@ -17,7 +17,7 @@ public class FoodHelper extends SQLiteOpenHelper {
             "CREATE TABLE" + CalorieData.NewFoodInfo.TABLE_NAME + "{" +
                     CalorieData.NewFoodInfo.FOOD_NAME + "TEXT, " +
                     CalorieData.NewFoodInfo.SERVING_PORTION + "TEXT, " +
-                    CalorieData.NewFoodInfo.SERVING_WEIGHT + "TEXT, " +
+                    //CalorieData.NewFoodInfo.SERVING_WEIGHT + "TEXT, " +
                     CalorieData.NewFoodInfo.ENERGY + "TEXT, " +
                     CalorieData.NewFoodInfo.PROTEIN + "TEXT, " +
                     CalorieData.NewFoodInfo.TOTAL_FAT + "TEXT, " +
@@ -39,13 +39,16 @@ public class FoodHelper extends SQLiteOpenHelper {
         Log.e("DATABASE OPERATIONS", "Table created...");
     }
 
-    public void addInfo(String name, String portion, String weight, String energy, String protein,
+    /*public void addInfo(String name, String portion, String weight, String energy, String protein,
+                        String fat, String carbo, String fibre, String chol, String cal, String sod,
+                        SQLiteDatabase db) {*/
+    public void addInfo(String name, String portion, String energy, String protein,
                         String fat, String carbo, String fibre, String chol, String cal, String sod,
                         SQLiteDatabase db) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(CalorieData.NewFoodInfo.FOOD_NAME, name);
         contentValues.put(CalorieData.NewFoodInfo.SERVING_PORTION, portion);
-        contentValues.put(CalorieData.NewFoodInfo.SERVING_WEIGHT, weight);
+        //contentValues.put(CalorieData.NewFoodInfo.SERVING_WEIGHT, weight);
         contentValues.put(CalorieData.NewFoodInfo.ENERGY, energy);
         contentValues.put(CalorieData.NewFoodInfo.PROTEIN, protein);
         contentValues.put(CalorieData.NewFoodInfo.TOTAL_FAT, fat);
