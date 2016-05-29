@@ -28,46 +28,10 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
         tvResult = (TextView) findViewById(R.id.tvResult);
 
         bPlus1.setOnClickListener(this);
+        bMinus1.setOnClickListener(this);
+        bPlus2.setOnClickListener(this);
+        bMinus2.setOnClickListener(this);
 
-        /*final String num1 = etFirstCal.getText().toString();
-        final String num2 = etSecondCal.getText().toString();
-        final String num3 = etThirdCal.getText().toString();
-
-        bPlus1.setOnClickListener(new View.OnClickListener() {
-            int result;
-            @Override
-            public void onClick(View v) {
-                result = Integer.parseInt(num1) + Integer.parseInt(num2);
-                tvResult.setText(String.valueOf(result));
-            }
-        });
-
-        bMinus1.setOnClickListener(new View.OnClickListener() {
-            int result;
-            @Override
-            public void onClick(View v) {
-                result = Integer.parseInt(num1) - Integer.parseInt(num2);
-                tvResult.setText(String.valueOf(result));
-            }
-        });
-
-        bPlus2.setOnClickListener(new View.OnClickListener() {
-            int result;
-            @Override
-            public void onClick(View v) {
-                result = Integer.parseInt(tvResult.getText().toString()) + Integer.parseInt(num3);
-                tvResult.setText(String.valueOf(result));
-            }
-        });
-
-        bMinus2.setOnClickListener(new View.OnClickListener() {
-            int result;
-            @Override
-            public void onClick(View v) {
-                result = Integer.parseInt(tvResult.getText().toString()) - Integer.parseInt(num3);
-                tvResult.setText(String.valueOf(result));
-            }
-        });*/
     }
 
     @Override
@@ -79,22 +43,23 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
         switch(view.getId()) {
             case R.id.bPlus1:
                 result = Integer.parseInt(num1) + Integer.parseInt(num2);
-                if(R.id.bPlus2 == 1) {
-                    result = result + Integer.parseInt(num3);
-                }
-                else if(R.id.bMinus2 == 1) {
-                    result = result - Integer.parseInt(num3);
-                }
                 tvResult.setText(String.valueOf(result));
                 break;
             case R.id.bMinus1:
                 result = Integer.parseInt(num1) - Integer.parseInt(num2);
-                if(R.id.bPlus2 == 1) {
-                    result = result + Integer.parseInt(num3);
-                }
-                else if(R.id.bMinus2 == 1) {
-                    result = result - Integer.parseInt(num3);
-                }
+                tvResult.setText(String.valueOf(result));
+                break;
+        }
+
+        result = Integer.parseInt(tvResult.getText().toString());
+
+        switch(view.getId()) {
+            case R.id.bPlus2:
+                result = result + Integer.parseInt(num3);
+                tvResult.setText(String.valueOf(result));
+                break;
+            case R.id.bMinus2:
+                result = result - Integer.parseInt(num3);
                 tvResult.setText(String.valueOf(result));
                 break;
         }
