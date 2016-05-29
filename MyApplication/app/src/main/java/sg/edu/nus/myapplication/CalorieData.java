@@ -22,9 +22,9 @@ public class CalorieData {
         public static final String PROTEIN = "protein";
         public static final String TOTAL_FAT = "fat";
         public static final String CARBOHYRATES = "carbo";
-        public static final String DIETARY_FIBRE = "fibre";
-        public static final String CHOLESTEROL = "choles";
-        public static final String CALCIUM = "cal";
+        //public static final String DIETARY_FIBRE = "fibre";
+        //public static final String CHOLESTEROL = "choles";
+        //public static final String CALCIUM = "cal";
         public static final String SODIUM = "sod";
         public static final String TABLE_NAME = "food_info";
     }

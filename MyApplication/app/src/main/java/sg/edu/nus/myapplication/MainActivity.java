@@ -38,5 +38,13 @@ public class MainActivity extends AppCompatActivity {
                 MainActivity.this.startActivity(addIntent);
             }
         });
+
+        bJustCalc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent addIntent = new Intent(MainActivity.this, Calculator.class);
+                MainActivity.this.startActivity(addIntent);
+            }
+        });
     }
 }
