@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         final Button bLogin = (Button) findViewById(R.id.bLogin);
         final Button bJustCalc = (Button) findViewById(R.id.bJustCalc);
         final Button bAdd = (Button) findViewById(R.id.bAdd);
+        final Button bView = (Button) findViewById(R.id.bView);
         final TextView registerLink = (TextView) findViewById(R.id.tvRegisterHere);
 
         registerLink.setOnClickListener(new View.OnClickListener() {
@@ -43,6 +44,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent addIntent = new Intent(MainActivity.this, Calculator.class);
+                MainActivity.this.startActivity(addIntent);
+            }
+        });
+
+        bView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent addIntent = new Intent(MainActivity.this, ListActivity.class);
                 MainActivity.this.startActivity(addIntent);
             }
         });

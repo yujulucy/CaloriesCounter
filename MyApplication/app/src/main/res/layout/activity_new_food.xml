@@ -38,26 +38,13 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:id="@+id/etEnergy"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:hint="Energy"
-        android:layout_below="@+id/etCalories" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
         android:id="@+id/etProtein"
-        android:layout_below="@+id/etEnergy"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:hint="Protein" />
+        android:hint="Protein"
+        android:layout_below="@+id/etCalories" />
 
     <EditText
         android:layout_width="wrap_content"

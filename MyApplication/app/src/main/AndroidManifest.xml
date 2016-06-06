@@ -19,7 +19,10 @@
         <activity android:name=".UserAreaActivity" />
         <activity android:name=".NewFoodActivity" />
         <activity android:name=".NewFoodAddedActivity" />
-        <activity android:name=".Calculator"></activity>
+        <activity android:name=".Calculator" />
+        <activity android:name=".ListActivity" />
+        <activity android:name=".DatabaseActivity" />
+        <activity android:name=".FoodListActivity"></activity>
     </application>
 
 </manifest>
