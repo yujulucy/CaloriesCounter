@@ -26,20 +26,18 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Large Text"
         android:id="@+id/tvMessage"
-        android:layout_marginBottom="154dp"
-        android:layout_above="@+id/bLogout"
-        android:layout_alignRight="@+id/bLogout"
-        android:layout_alignEnd="@+id/bLogout" />
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="LOGOUT"
         android:id="@+id/bLogout"
-        android:layout_marginBottom="62dp"
+        android:background="#fc9191"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:background="#fc9191" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -54,5 +52,15 @@
         android:layout_alignEnd="@+id/tvMessage"
         android:textSize="30dp"
         android:textIsSelectable="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="calculate"
+        android:id="@+id/bCalculate"
+        android:background="#faed99"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

@@ -17,6 +17,7 @@ public class UserAreaActivity extends AppCompatActivity {
         final TextView tvAccount = (TextView) findViewById(R.id.tvAccount);
         final TextView tvMessage = (TextView) findViewById(R.id.tvMessage);
         final Button bLogout = (Button) findViewById(R.id.bLogout);
+        final Button bCalculate = (Button) findViewById(R.id.bCalculate);
 
         Intent intent = getIntent();
         String name = intent.getStringExtra("name");
@@ -35,6 +36,15 @@ public class UserAreaActivity extends AppCompatActivity {
                 UserAreaActivity.this.startActivity(registerIntent);
             }
         });
+
+        bCalculate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent registerIntent = new Intent(UserAreaActivity.this, Calculator.class);
+                UserAreaActivity.this.startActivity(registerIntent);
+            }
+        });
+
 
     }
 }
