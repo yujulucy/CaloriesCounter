@@ -7,44 +7,30 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="tutorial.loginregister2.RegisterActivity">
+    tools:context="tutorial.loginregister2.LoginActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="REGISTRATION"
-        android:id="@+id/textView"
+        android:text="LOGIN PAGE"
+        android:id="@+id/textView2"
+        android:layout_marginTop="93dp"
         android:textSize="50dp"
-        android:textAlignment="center"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/etName"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="48dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:hint="Name" />
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/etUsername"
-        android:layout_below="@+id/etName"
+        android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/textView"
-        android:layout_alignEnd="@+id/textView"
-        android:hint="Username" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:hint="Username"
+        android:textAlignment="center" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -57,19 +43,30 @@
         android:layout_alignParentStart="true"
         android:layout_alignRight="@+id/etUsername"
         android:layout_alignEnd="@+id/etUsername"
-        android:hint="Password" />
+        android:hint="Password"
+        android:textAlignment="center" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="REGISTER NOW"
+        android:text="LOGIN"
         android:id="@+id/bLogin"
         android:layout_below="@+id/etPassword"
-        android:layout_marginTop="58dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_marginTop="46dp"
+        android:background="#9afcd5"
         android:layout_alignRight="@+id/etPassword"
         android:layout_alignEnd="@+id/etPassword"
-        android:background="#83f1ff" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="REGISTER HERE"
+        android:id="@+id/bRegisterLink"
+        android:layout_below="@+id/bLogin"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/bLogin"
+        android:layout_alignEnd="@+id/bLogin" />
 </RelativeLayout>
