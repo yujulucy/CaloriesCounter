@@ -15,58 +15,69 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class RegisterActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_login);
 
-        final EditText etName = (EditText) findViewById(R.id.etName);
         final EditText etUsername = (EditText) findViewById(R.id.etUsername);
         final EditText etPassword = (EditText) findViewById(R.id.etPassword);
 
-        final Button bRegister = (Button) findViewById(R.id.bLogin);
+        final Button bLogin = (Button) findViewById(R.id.bLogin);
+        final Button bRegisterLink = (Button) findViewById(R.id.bRegisterLink);
 
-        bRegister.setOnClickListener(new View.OnClickListener() {
+        bRegisterLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String name = etName.getText().toString();
+                Intent registerIntent = new Intent(LoginActivity.this, RegisterActivity.class);
+                LoginActivity.this.startActivity(registerIntent);
+            }
+        });
+
+        bLogin.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
                 final String username = etUsername.getText().toString();
                 final String password = etPassword.getText().toString();
 
-
-                Response.Listener<String> responseListener = new Response.Listener<String>(){
+                Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         try {
-
                             JSONObject jsonResponse = new JSONObject(response);
                             boolean success = jsonResponse.getBoolean("success");
 
-                            if(success) {
-                                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-                                RegisterActivity.this.startActivity(intent);
+                            if(success){
+                                final String name = jsonResponse.getString("name");
+
+                                Intent intent = new Intent(LoginActivity.this, UserAreaActivity.class);
+                                intent.putExtra("name",name);
+                                intent.putExtra("username",username);
+                                LoginActivity.this.startActivity(intent);
+
+
                             } else {
-                                AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
-                                builder.setMessage("Registration failed")
+                                AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
+                                builder.setMessage("Login failed")
                                         .setNegativeButton("Retry",null)
                                         .create()
                                         .show();
                             }
 
-
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
+
                     }
                 };
 
-
-                RegisterRequest registerRequest = new RegisterRequest(name, username, password,responseListener);
-                RequestQueue queue = Volley.newRequestQueue(RegisterActivity.this);
-                queue.add(registerRequest);
+                LoginRequest loginRequest = new LoginRequest(username,password,responseListener);
+                RequestQueue queue = Volley.newRequestQueue(LoginActivity.this);
+                queue.add(loginRequest);
             }
         });
+
     }
 }
