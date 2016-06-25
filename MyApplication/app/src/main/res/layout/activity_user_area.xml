@@ -26,10 +26,10 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Large Text"
         android:id="@+id/tvMessage"
-        android:layout_marginBottom="154dp"
-        android:layout_above="@+id/bLogout"
+        android:layout_below="@+id/textView3"
         android:layout_alignRight="@+id/bLogout"
-        android:layout_alignEnd="@+id/bLogout" />
+        android:layout_alignEnd="@+id/bLogout"
+        android:layout_marginTop="43dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -54,5 +54,53 @@
         android:layout_alignEnd="@+id/tvMessage"
         android:textSize="30dp"
         android:textIsSelectable="true" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ibList"
+        android:background="@drawable/list"
+        android:layout_above="@+id/bLogout"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="270dp"
+        android:layout_below="@+id/textView3"
+        android:layout_marginTop="250dp" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ibBookmark"
+        android:background="@drawable/bookmark"
+        android:layout_above="@+id/bLogout"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="180dp"
+        android:layout_below="@+id/textView3"
+        android:layout_marginTop="250dp" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ibCalc"
+        android:background="@drawable/calculator"
+        android:layout_above="@+id/bLogout"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="190dp"
+        android:layout_marginRight="80dp"
+        android:layout_below="@+id/textView3"
+        android:layout_marginTop="250dp" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ibPlus"
+        android:background="@drawable/add"
+        android:layout_above="@+id/bLogout"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="295dp"
+        android:layout_below="@+id/textView3"
+        android:layout_marginTop="260dp"/>
 
 </RelativeLayout>
