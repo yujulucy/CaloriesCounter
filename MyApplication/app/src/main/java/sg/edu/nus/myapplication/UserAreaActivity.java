@@ -42,13 +42,13 @@ public class UserAreaActivity extends AppCompatActivity {
             }
         });
 
-        ibList.setOnClickListener(new View.OnClickListener() {
+        /*ibList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent registerIntent = new Intent(UserAreaActivity.this, ListActivity.class);
                 UserAreaActivity.this.startActivity(registerIntent);
             }
-        });
+        });*/
 
         ibCalc.setOnClickListener(new View.OnClickListener() {
             @Override
