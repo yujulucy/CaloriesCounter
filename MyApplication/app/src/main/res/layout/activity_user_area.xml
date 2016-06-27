@@ -103,13 +103,4 @@
         android:layout_below="@+id/textView3"
         android:layout_marginTop="260dp"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="NewButton"
-        android:id="@+id/button4"
-        android:background="#fc9191"
-        android:layout_alignBottom="@+id/ibList"
-        android:layout_centerHorizontal="true" />
-
 </RelativeLayout>
