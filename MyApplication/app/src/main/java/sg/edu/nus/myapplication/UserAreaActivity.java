@@ -19,12 +19,15 @@ public class UserAreaActivity extends AppCompatActivity {
        // final TextView tvMessage = (TextView) findViewById(R.id.tvMessage);
 
         final Button bLogout = (Button) findViewById(R.id.bLogout);
+
       //  final Button bFoodDiary = (Button) findViewById(R.id.bFoodDiary);
 
         final ImageButton ibList = (ImageButton) findViewById(R.id.ibList);
         final ImageButton ibBookmark = (ImageButton) findViewById(R.id.ibBookmark);
         final ImageButton ibCalc = (ImageButton) findViewById(R.id.ibCalc);
         final ImageButton ibPlus = (ImageButton) findViewById(R.id.ibPlus);
+
+      //  final Button bCalculate = (Button) findViewById(R.id.bCalculate);
 
 
         Intent intent = getIntent();
@@ -45,6 +48,7 @@ public class UserAreaActivity extends AppCompatActivity {
             }
         });
 
+
         ibList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,6 +56,7 @@ public class UserAreaActivity extends AppCompatActivity {
                 UserAreaActivity.this.startActivity(viewIntent);
             }
         });
+
 
         ibCalc.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,6 +66,7 @@ public class UserAreaActivity extends AppCompatActivity {
             }
         });
 
+
         ibPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,6 +74,7 @@ public class UserAreaActivity extends AppCompatActivity {
                 UserAreaActivity.this.startActivity(addIntent);
             }
         });
+
 
     }
 }
