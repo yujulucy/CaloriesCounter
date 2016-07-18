@@ -7,100 +7,82 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="tutorial.loginregister2.UserAreaActivity">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Welcome to LoginRegister2"
-        android:id="@+id/textView3"
-        android:textSize="20dp"
-        android:layout_marginTop="47dp"
-        android:layout_below="@+id/tvAccount"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
-        android:id="@+id/tvMessage"
-        android:layout_below="@+id/textView3"
-        android:layout_alignRight="@+id/bLogout"
-        android:layout_alignEnd="@+id/bLogout"
-        android:layout_marginTop="43dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="LOGOUT"
-        android:id="@+id/bLogout"
-        android:layout_marginBottom="62dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:background="#fc9191" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Medium Text"
-        android:id="@+id/tvAccount"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/tvMessage"
-        android:layout_alignEnd="@+id/tvMessage"
-        android:textSize="30dp"
-        android:textIsSelectable="true" />
+    tools:context="tutorial.loginregister2.UserAreaActivity"
+    android:background="#ff6969">
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/ibList"
         android:background="@drawable/list"
-        android:layout_above="@+id/bLogout"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="70dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="270dp"
-        android:layout_below="@+id/textView3"
-        android:layout_marginTop="250dp" />
+        android:layout_marginTop="400dp" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/ibBookmark"
         android:background="@drawable/bookmark"
-        android:layout_above="@+id/bLogout"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="70dp"
         android:layout_marginLeft="100dp"
         android:layout_marginRight="180dp"
-        android:layout_below="@+id/textView3"
-        android:layout_marginTop="250dp" />
+        android:layout_marginTop="400dp" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/ibCalc"
         android:background="@drawable/calculator"
-        android:layout_above="@+id/bLogout"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="70dp"
         android:layout_marginLeft="190dp"
         android:layout_marginRight="80dp"
-        android:layout_below="@+id/textView3"
-        android:layout_marginTop="250dp" />
+        android:layout_marginTop="400dp" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/ibPlus"
         android:background="@drawable/add"
-        android:layout_above="@+id/bLogout"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="70dp"
         android:layout_marginRight="5dp"
         android:layout_marginLeft="295dp"
+        android:layout_marginTop="400dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LOGout"
+        android:id="@+id/bLogout"
+        android:background="#ffffff"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/ibList"
+        android:layout_alignStart="@+id/ibList"
+        android:layout_alignRight="@+id/ibPlus"
+        android:layout_alignEnd="@+id/ibPlus" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Food"
+        android:id="@+id/textView3"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="99dp"
+        android:textSize="80dp"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/textView16"
+        android:textSize="50dp"
+        android:textColor="#ffffff"
         android:layout_below="@+id/textView3"
-        android:layout_marginTop="260dp"/>
+        android:layout_centerHorizontal="true"
+        android:text="Diary" />
 
 </RelativeLayout>

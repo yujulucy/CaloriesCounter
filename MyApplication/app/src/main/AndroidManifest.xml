@@ -24,7 +24,10 @@
         <activity android:name=".Calculator" />
         <activity android:name=".ListActivity" />
         <activity android:name=".DatabaseActivity" />
-        <activity android:name=".FoodListActivity"></activity>
+        <activity android:name=".FoodListActivity"/>
+        <activity android:name=".AddFoodDataActivity"/>
+        <activity android:name=".FoodDiaryActivity"/>
+        <activity android:name=".CalendarActivity"></activity>
     </application>
 
 </manifest>

@@ -15,14 +15,17 @@ public class UserAreaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_area);
 
-        final TextView tvAccount = (TextView) findViewById(R.id.tvAccount);
-        final TextView tvMessage = (TextView) findViewById(R.id.tvMessage);
+      //  final TextView tvAccount = (TextView) findViewById(R.id.tvAccount);
+       // final TextView tvMessage = (TextView) findViewById(R.id.tvMessage);
+
         final Button bLogout = (Button) findViewById(R.id.bLogout);
+      //  final Button bFoodDiary = (Button) findViewById(R.id.bFoodDiary);
 
         final ImageButton ibList = (ImageButton) findViewById(R.id.ibList);
         final ImageButton ibBookmark = (ImageButton) findViewById(R.id.ibBookmark);
         final ImageButton ibCalc = (ImageButton) findViewById(R.id.ibCalc);
         final ImageButton ibPlus = (ImageButton) findViewById(R.id.ibPlus);
+
 
         Intent intent = getIntent();
         String name = intent.getStringExtra("name");
@@ -31,8 +34,8 @@ public class UserAreaActivity extends AppCompatActivity {
         String message = "Welcome to your user area, " + name;
         String accountDetails = "Username: " + username;
 
-        tvMessage.setText(message);
-        tvAccount.setText(accountDetails);
+      //  tvMessage.setText(message);
+      //  tvAccount.setText(accountDetails);
 
         bLogout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,8 +48,8 @@ public class UserAreaActivity extends AppCompatActivity {
         ibList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent registerIntent = new Intent(UserAreaActivity.this, ListActivity.class);
-                UserAreaActivity.this.startActivity(registerIntent);
+                Intent viewIntent = new Intent(UserAreaActivity.this, FoodDiaryActivity.class);
+                UserAreaActivity.this.startActivity(viewIntent);
             }
         });
 
@@ -61,8 +64,8 @@ public class UserAreaActivity extends AppCompatActivity {
         ibPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent registerIntent = new Intent(UserAreaActivity.this, NewFoodActivity.class);
-                UserAreaActivity.this.startActivity(registerIntent);
+                Intent addIntent = new Intent(UserAreaActivity.this, AddFoodDataActivity.class);
+                UserAreaActivity.this.startActivity(addIntent);
             }
         });
 
