@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:id="@+id/textView8"
+                android:id="@+id/textViewJSON"
                 android:textSize="30dp"
                 android:background="#f9f7fd"
                 android:hint="Breakfast content" />
@@ -64,7 +64,15 @@
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:text="+ Add Food"
-        android:id="@+id/button"
+        android:id="@+id/bBreakfast"
+        android:background="#ffffff"
+        android:textColor="#ff6969" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="+ Expand View"
+        android:id="@+id/bExpandView"
         android:background="#ffffff"
         android:textColor="#ff6969" />
 
