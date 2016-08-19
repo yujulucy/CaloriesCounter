@@ -1,93 +1,121 @@
 package sg.edu.nus.myapplication;
 
+import android.app.Activity;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import java.util.HashMap;
+import java.util.Map;
+import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import com.android.volley.RequestQueue;
+import com.android.volley.Request;
 import com.android.volley.Response;
-import com.android.volley.toolbox.Volley;
-
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
 
 /**
- * Created by jo on 28/6/16.
+ * Created by jo on 16/8/16.
  */
-public class AddFoodDataActivity extends AppCompatActivity {
+public class AddFoodDataActivity extends Activity {
+    String url = "http://joellehippotutorial.netau.net/take_order.php";
+    String brand_name,desc,portion,weight,carbs,fiber,fats,energy,protein;
+
+
+    EditText brand_et,desc_et,energy_et,portion_et,weight_et,carbs_et,protein_et,fiber_et,fats_et;
+
+    ProgressDialog PD;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_food_data);
 
-        final EditText etBrandName = (EditText) findViewById(R.id.etBrandName);
-        final EditText etDescription = (EditText) findViewById(R.id.etDescription);
-        final EditText etPortion = (EditText) findViewById(R.id.etPortion);
-        final EditText etWeight = (EditText) findViewById(R.id.etWeight);
-        final EditText etCalories = (EditText) findViewById(R.id.etCalories);
-        final EditText etProtein = (EditText) findViewById(R.id.etProtein);
-        final EditText etCarbs = (EditText) findViewById(R.id.etCarbs);
-        final EditText etFat = (EditText) findViewById(R.id.etFat);
-        final EditText etFiber = (EditText) findViewById(R.id.etFiber);
+        PD = new ProgressDialog(this);
+        PD.setMessage("Loading.....");
+        PD.setCancelable(false);
 
-        final Button bAdd = (Button) findViewById(R.id.bAdd);
+        brand_et = (EditText) findViewById(R.id.etBrandName);
+        desc_et = (EditText)findViewById(R.id.etDescription);
+        portion_et = (EditText) findViewById(R.id.etPortion);
+        weight_et= (EditText) findViewById(R.id.etWeight);
+        energy_et = (EditText) findViewById(R.id.etEnergy);
+        carbs_et = (EditText)findViewById(R.id.etWeight);
+        protein_et = (EditText) findViewById(R.id.etProtein);
+        fats_et = (EditText) findViewById(R.id.etFat);
+        carbs_et = (EditText) findViewById(R.id.etCarbs);
+        fiber_et = (EditText) findViewById(R.id.etFiber);
 
-        bAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final String brand_name = etBrandName.getText().toString();
-                final String description = etDescription.getText().toString();
-                final String serving_portion = etPortion.getText().toString();
-                final double serving_weight = Double.parseDouble(etWeight.getText().toString());
-                final double calories = Double.parseDouble(etCalories.getText().toString());
-                final double protein = Double.parseDouble(etProtein.getText().toString());
-                final double carbs = Double.parseDouble(etCarbs.getText().toString());
-                final double fat = Double.parseDouble(etFat.getText().toString());
-                final double fiber = Double.parseDouble(etFiber.getText().toString());
+    }
 
-                Response.Listener<String> responseListener = new Response.Listener<String>(){
+
+    public void insert(View v) {
+        PD.show();
+        brand_name = brand_et.getText().toString();
+        desc = desc_et.getText().toString();
+        portion = portion_et.getText().toString();
+        weight = weight_et.getText().toString();
+        carbs = carbs_et.getText().toString();
+        protein = protein_et.getText().toString();
+        fats = fats_et.getText().toString();
+        fiber = fiber_et.getText().toString();
+        energy = energy_et.getText().toString();
+
+
+        StringRequest postRequest = new StringRequest(Request.Method.POST, url,
+                new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        try {
+                        PD.dismiss();
+                        brand_et.setText("");
+                        desc_et.setText("");
+                        portion_et.setText("");
+                        weight_et.setText("");
+                        fats_et.setText("");
+                        fiber_et.setText("");
+                        protein_et.setText("");
+                        energy_et.setText("");
+                        carbs_et.setText("");
+                        Toast.makeText(getApplicationContext(),
+                                "Data Inserted Successfully",
+                                Toast.LENGTH_SHORT).show();
 
-                            JSONObject jsonResponse = new JSONObject(response);
-                            boolean success = jsonResponse.getBoolean("success");
-
-                            if(success) {
-                                Intent intent = new Intent(AddFoodDataActivity.this, UserAreaActivity.class);
-                                AddFoodDataActivity.this.startActivity(intent);
-
-                                Toast popMessage = Toast.makeText(AddFoodDataActivity.this, "Food item added", Toast.LENGTH_SHORT);
-                                popMessage.show();
-
-                            } else {
-                                AlertDialog.Builder builder = new AlertDialog.Builder(AddFoodDataActivity.this);
-                                builder.setMessage("Food addition failed")
-                                        .setNegativeButton("Retry",null)
-                                        .create()
-                                        .show();
-                            }
-
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
                     }
-                };
-
-
-                AddFoodDataRequest addFoodDataRequest = new AddFoodDataRequest(brand_name, description, serving_portion,
-                        serving_weight, calories, protein, carbs, fat, fiber, responseListener);
-                RequestQueue queue = Volley.newRequestQueue(AddFoodDataActivity.this);
-                queue.add(addFoodDataRequest);
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                PD.dismiss();
+                Toast.makeText(getApplicationContext(),
+                        "failed to insert", Toast.LENGTH_SHORT).show();
             }
-        });
+        }) {
+            @Override
+            protected Map<String, String> getParams() {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("brand_name", brand_name);
+                params.put("desc", desc);
+                params.put("portion",portion);
+                params.put("weight",weight);
+                params.put("fats",fats);
+                params.put("carbs",carbs);
+                params.put("fiber",fiber);
+                params.put("protein",protein);
+                params.put("energy", energy);
 
+                return params;
+            }
+        };
+
+        // Adding request to request queue
+        MyApplication.getInstance().addToReqQueue(postRequest);
+    }
+
+    public void read(View v) {
+        Intent read_intent = new Intent(AddFoodDataActivity.this, FoodDiaryActivity.class);
+        startActivity(read_intent);
     }
 }

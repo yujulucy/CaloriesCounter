@@ -67,14 +67,5 @@ public class UserAreaActivity extends AppCompatActivity {
         });
 
 
-        ibPlus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent addIntent = new Intent(UserAreaActivity.this, DeleteActivity.class);
-                UserAreaActivity.this.startActivity(addIntent);
-            }
-        });
-
-
     }
 }

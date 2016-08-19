@@ -74,7 +74,8 @@
         android:text="+ Expand View"
         android:id="@+id/bExpandView"
         android:background="#ffffff"
-        android:textColor="#ff6969" />
+        android:textColor="#ff6969"
+        android:onClick="read"/>
 
     <TextView
         android:layout_width="fill_parent"

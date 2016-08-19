@@ -47,7 +47,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/etCalories"
+        android:id="@+id/etEnergy"
         android:hint="Energy (Cal/kcal)"
         android:textColor="#ffffff" />
 
@@ -87,5 +87,6 @@
         android:id="@+id/bAdd"
         android:background="#fcfbfb"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        android:onClick="insert" />
 </LinearLayout>
