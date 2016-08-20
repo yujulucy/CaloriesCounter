@@ -44,7 +44,6 @@ public class AddFoodDataActivity extends Activity {
         portion_et = (EditText) findViewById(R.id.etPortion);
         weight_et= (EditText) findViewById(R.id.etWeight);
         energy_et = (EditText) findViewById(R.id.etEnergy);
-        carbs_et = (EditText)findViewById(R.id.etWeight);
         protein_et = (EditText) findViewById(R.id.etProtein);
         fats_et = (EditText) findViewById(R.id.etFat);
         carbs_et = (EditText) findViewById(R.id.etCarbs);
@@ -114,8 +113,4 @@ public class AddFoodDataActivity extends Activity {
         MyApplication.getInstance().addToReqQueue(postRequest);
     }
 
-    public void read(View v) {
-        Intent read_intent = new Intent(AddFoodDataActivity.this, FoodDiaryActivity.class);
-        startActivity(read_intent);
-    }
 }

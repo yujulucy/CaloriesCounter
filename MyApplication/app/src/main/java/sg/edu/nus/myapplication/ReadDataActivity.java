@@ -108,12 +108,12 @@ public class ReadDataActivity extends ListActivity {
         public void onItemClick(AdapterView<?> parent, View view, int position,
                                 long id) {
 
-          //  Intent modify_intent = new Intent(ReadData.this,
-           //         UpdateDeleteData.class);
+            Intent modify_intent = new Intent(ReadDataActivity.this,
+                    UpdateDeleteData.class);
 
-          //  modify_intent.putExtra("item", Item_List.get(position));
+            modify_intent.putExtra("brand", Item_List.get(position));
 
-          //  startActivity(modify_intent);
+            startActivity(modify_intent);
 
         }
 

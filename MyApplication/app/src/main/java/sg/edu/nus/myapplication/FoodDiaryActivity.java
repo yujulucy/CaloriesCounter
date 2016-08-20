@@ -32,4 +32,6 @@ public class FoodDiaryActivity extends Activity {
         startActivity(read_intent);
     }
 
+
+
 }
