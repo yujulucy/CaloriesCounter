@@ -30,7 +30,8 @@ public class ReadDataActivity extends ListActivity {
 
     // JSON Node names
     public static final String ITEM_ID = "id";
-    public static final String ITEM_NAME = "brand";
+    public static final String ITEM_ENERGY = "energy";
+    public static final String ITEM_NAME = "item";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,16 +65,18 @@ public class ReadDataActivity extends ListActivity {
 
                                     JSONObject jobj = ja.getJSONObject(i);
                                     HashMap<String, String> item = new HashMap<String, String>();
-                                    item.put(ITEM_ID, jobj.getString(ITEM_ID));
+                                    item.put(ITEM_ENERGY, jobj.getString(ITEM_ENERGY));
                                     item.put(ITEM_NAME,
                                             jobj.getString(ITEM_NAME));
+                                    item.put(ITEM_ID, jobj.getString(ITEM_ID));
 
                                     Item_List.add(item);
 
                                 } // for loop ends
 
-                                String[] from = {ITEM_ID, ITEM_NAME};
-                                int[] to = {R.id.item_id, R.id.item_name};
+                                String[] from = {ITEM_ENERGY, ITEM_NAME,ITEM_ID};
+                               // int[] to = {R.id.item_energy, R.id.item_name,R.id.item_id};
+                                int[] to = {R.id.item_energy, R.id.item_name};
 
                                 adapter = new SimpleAdapter(
                                         getApplicationContext(), Item_List,
@@ -111,7 +114,8 @@ public class ReadDataActivity extends ListActivity {
             Intent modify_intent = new Intent(ReadDataActivity.this,
                     UpdateDeleteData.class);
 
-            modify_intent.putExtra("brand", Item_List.get(position));
+            modify_intent.putExtra("item", Item_List.get(position));
+            modify_intent.putExtra("energy", Item_List.get(position));
 
             startActivity(modify_intent);
 

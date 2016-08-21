@@ -23,10 +23,10 @@ import com.android.volley.toolbox.StringRequest;
  */
 public class AddFoodDataActivity extends Activity {
     String url = "http://joellehippotutorial.netau.net/take_order.php";
-    String brand_name,desc,portion,weight,carbs,fiber,fats,energy,protein;
+    String item,portion,weight,carbs,fiber,fats,energy,protein;
 
 
-    EditText brand_et,desc_et,energy_et,portion_et,weight_et,carbs_et,protein_et,fiber_et,fats_et;
+    EditText item_et,energy_et,portion_et,weight_et,carbs_et,protein_et,fiber_et,fats_et;
 
     ProgressDialog PD;
 
@@ -39,8 +39,7 @@ public class AddFoodDataActivity extends Activity {
         PD.setMessage("Loading.....");
         PD.setCancelable(false);
 
-        brand_et = (EditText) findViewById(R.id.etBrandName);
-        desc_et = (EditText)findViewById(R.id.etDescription);
+        item_et = (EditText)findViewById(R.id.etItem);
         portion_et = (EditText) findViewById(R.id.etPortion);
         weight_et= (EditText) findViewById(R.id.etWeight);
         energy_et = (EditText) findViewById(R.id.etEnergy);
@@ -54,8 +53,7 @@ public class AddFoodDataActivity extends Activity {
 
     public void insert(View v) {
         PD.show();
-        brand_name = brand_et.getText().toString();
-        desc = desc_et.getText().toString();
+        item = item_et.getText().toString();
         portion = portion_et.getText().toString();
         weight = weight_et.getText().toString();
         carbs = carbs_et.getText().toString();
@@ -70,8 +68,7 @@ public class AddFoodDataActivity extends Activity {
                     @Override
                     public void onResponse(String response) {
                         PD.dismiss();
-                        brand_et.setText("");
-                        desc_et.setText("");
+                       item_et.setText("");
                         portion_et.setText("");
                         weight_et.setText("");
                         fats_et.setText("");
@@ -95,8 +92,7 @@ public class AddFoodDataActivity extends Activity {
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("brand_name", brand_name);
-                params.put("desc", desc);
+                params.put("item",item);
                 params.put("portion",portion);
                 params.put("weight",weight);
                 params.put("fats",fats);

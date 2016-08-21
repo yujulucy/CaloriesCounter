@@ -22,8 +22,8 @@ import com.android.volley.toolbox.JsonObjectRequest;
  * Created by jo on 20/8/16.
  */
 public class UpdateDeleteData extends Activity {
-    EditText brand_name_et;
-    String id, brand_name;
+    EditText item_name_et,item_energy_et;
+    String id, item_name,item_energy;
 
     ProgressDialog PD;
 
@@ -37,28 +37,34 @@ public class UpdateDeleteData extends Activity {
         PD.setMessage("please wait.....");
         PD.setCancelable(false);
 
-        brand_name_et = (EditText) findViewById(R.id.modify_item_et);
+        item_name_et = (EditText) findViewById(R.id.modify_item_et);
+        item_energy_et = (EditText) findViewById(R.id.modify_energy_et);
         Intent i = getIntent();
 
         HashMap<String, String> item = (HashMap<String, String>) i
-                .getSerializableExtra("brand");
+                .getSerializableExtra("item");
 
         id = item.get(ReadDataActivity.ITEM_ID);
-        brand_name = item.get(ReadDataActivity.ITEM_NAME);
+        item_name = item.get(ReadDataActivity.ITEM_NAME);
+        item_energy = item.get(ReadDataActivity.ITEM_ENERGY);
 
-        brand_name_et.setText(brand_name);
+        item_name_et.setText(item_name);
+        item_energy_et.setText(item_energy);
 
     }
 
     public void update(View view) {
+        //perform update
         PD.show();
-        brand_name = brand_name_et.getText().toString();
+        item_name = item_name_et.getText().toString();
+        item_energy = item_energy_et.getText().toString();
 
         String update_url = "http://joellehippotutorial.netau.net/update_item.php";
 
         Map<String, String> params = new HashMap<String, String>();
         params.put("id", id);
-        params.put("brand",brand_name);
+        params.put("item",item_name);
+        params.put("energy",item_energy);
 
         CustomRequest update_request = new CustomRequest(Request.Method.POST,update_url,
                 params, new Response.Listener<JSONObject>() {
@@ -103,38 +109,38 @@ public class UpdateDeleteData extends Activity {
 
     public void delete(View view) {
         PD.show();
-        String delete_url = "http://joellehippotutorial.netau.net/delete_item.php?id="
+        String delete_url ="http://joellehippotutorial.netau.net/delete_item.php?id="
                 + id;
 
         JsonObjectRequest delete_request = new JsonObjectRequest(delete_url,
-                new Response.Listener<JSONObject>() {
+                null, new Response.Listener<JSONObject>() {
 
-                    @Override
-                    public void onResponse(JSONObject response) {
+            @Override
+            public void onResponse(JSONObject response) {
 
-                        try {
-                            int success = response.getInt("success");
+                try {
+                    int success = response.getInt("success");
 
-                            if (success == 1) {
-                                PD.dismiss();
-                                Toast.makeText(getApplicationContext(),
-                                        "Deleted Successfully",
-                                        Toast.LENGTH_SHORT).show();
-                                // redirect to readdata
-                                MoveToReadData();
-                            } else {
-                                PD.dismiss();
-                                Toast.makeText(getApplicationContext(),
-                                        "failed to delete", Toast.LENGTH_SHORT)
-                                        .show();
-                            }
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-
+                    if (success == 1) {
+                        PD.dismiss();
+                        Toast.makeText(getApplicationContext(),
+                                "Deleted Successfully",
+                                Toast.LENGTH_SHORT).show();
+                        // redirect to readdata
+                        MoveToReadData();
+                    } else {
+                        PD.dismiss();
+                        Toast.makeText(getApplicationContext(),
+                                "failed to delete", Toast.LENGTH_SHORT)
+                                .show();
                     }
-                }, new Response.ErrorListener() {
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }, new Response.ErrorListener() {
 
             @Override
             public void onErrorResponse(VolleyError error) {
