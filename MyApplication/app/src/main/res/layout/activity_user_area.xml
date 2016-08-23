@@ -24,22 +24,12 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/ibBookmark"
-        android:background="@drawable/bookmark"
-        android:layout_marginBottom="60dp"
-        android:layout_marginLeft="90dp"
-        android:layout_marginRight="170dp"
-        android:layout_marginTop="350dp" />
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/ibCalc"
         android:background="@drawable/calculator"
         android:layout_marginBottom="70dp"
-        android:layout_marginLeft="190dp"
-        android:layout_marginRight="80dp"
-        android:layout_marginTop="360dp" />
+        android:layout_marginLeft="130dp"
+        android:layout_marginRight="130dp"
+        android:layout_marginTop="360dp"  />
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -47,8 +37,8 @@
         android:id="@+id/ibPlus"
         android:background="@drawable/add"
         android:layout_marginBottom="70dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginLeft="295dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="275dp"
         android:layout_marginTop="360dp" />
 
     <Button

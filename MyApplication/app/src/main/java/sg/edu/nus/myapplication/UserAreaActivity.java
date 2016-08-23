@@ -25,7 +25,7 @@ public class UserAreaActivity extends AppCompatActivity {
       //  final Button bFoodDiary = (Button) findViewById(R.id.bFoodDiary);
 
         final ImageButton ibList = (ImageButton) findViewById(R.id.ibList);
-        final ImageButton ibBookmark = (ImageButton) findViewById(R.id.ibBookmark);
+        //final ImageButton ibBookmark = (ImageButton) findViewById(R.id.ibBookmark);
         final ImageButton ibCalc = (ImageButton) findViewById(R.id.ibCalc);
         final ImageButton ibPlus = (ImageButton) findViewById(R.id.ibPlus);
 
@@ -63,7 +63,7 @@ public class UserAreaActivity extends AppCompatActivity {
         ibCalc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent registerIntent = new Intent(UserAreaActivity.this, Calculator.class);
+                Intent registerIntent = new Intent(UserAreaActivity.this, Calculator2.class);
                 UserAreaActivity.this.startActivity(registerIntent);
             }
         });
