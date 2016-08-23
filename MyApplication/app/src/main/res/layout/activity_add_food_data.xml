@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffb8b8">
+    android:background="#fcfafa"
+    android:weightSum="1">
 
     <TextView
         android:layout_width="match_parent"
@@ -10,10 +11,11 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Custom nutrition information"
         android:id="@+id/textView4"
-        android:textSize="29dp"
+        android:textSize="30dp"
         android:textColor="#ffffff"
         android:textAlignment="center"
-        android:background="#ff6969" />
+        android:background="#adf07e"
+        android:layout_weight="0.20" />
 
     <EditText
         android:layout_width="match_parent"
@@ -73,12 +75,12 @@
         android:textColor="#ffffff" />
 
     <Button
-        android:layout_width="214dp"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="ADD"
         android:id="@+id/bAdd"
-        android:background="#fcfbfb"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
-        android:onClick="insert" />
+        android:layout_marginTop="10dp" />
+
 </LinearLayout>

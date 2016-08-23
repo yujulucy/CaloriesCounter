@@ -22,8 +22,10 @@ import com.android.volley.toolbox.JsonObjectRequest;
  * Created by jo on 20/8/16.
  */
 public class UpdateDeleteData extends Activity {
-    EditText item_name_et,item_energy_et;
-    String id, item_name,item_energy;
+    EditText item_name_et,item_energy_et, item_portion_et, item_weight_et, item_carbs_et, item_protein_et,
+             item_fats_et, item_fiber_et;
+    String id, item_name,item_energy, item_portion, item_weight, item_carbs, item_protein, item_fats
+            , item_fiber;
 
     ProgressDialog PD;
 
@@ -39,6 +41,13 @@ public class UpdateDeleteData extends Activity {
 
         item_name_et = (EditText) findViewById(R.id.modify_item_et);
         item_energy_et = (EditText) findViewById(R.id.modify_energy_et);
+        item_carbs_et = (EditText) findViewById(R.id.modify_carbs);
+        item_fiber_et = (EditText) findViewById(R.id.modify_fiber);
+        item_fats_et = (EditText) findViewById(R.id.modify_fats);
+        item_portion_et = (EditText) findViewById(R.id.modify_portion);
+        item_protein_et = (EditText) findViewById(R.id.modify_protein);
+        item_weight_et = (EditText) findViewById(R.id.modify_weight);
+
         Intent i = getIntent();
 
         HashMap<String, String> item = (HashMap<String, String>) i
@@ -47,9 +56,22 @@ public class UpdateDeleteData extends Activity {
         id = item.get(ReadDataActivity.ITEM_ID);
         item_name = item.get(ReadDataActivity.ITEM_NAME);
         item_energy = item.get(ReadDataActivity.ITEM_ENERGY);
+        item_carbs = item.get(ReadDataActivity.ITEM_CARBS);
+        item_fiber = item.get(ReadDataActivity.ITEM_FIBER);
+        item_protein = item.get(ReadDataActivity.ITEM_PROTEIN);
+        item_portion = item.get(ReadDataActivity.ITEM_PORTION);
+        item_weight = item.get(ReadDataActivity.ITEM_WEIGHT);
+        item_fats = item.get(ReadDataActivity.ITEM_FATS);
 
         item_name_et.setText(item_name);
         item_energy_et.setText(item_energy);
+        item_carbs_et.setText(item_carbs);
+        item_fiber_et.setText(item_fiber);
+        item_fats_et.setText(item_fats);
+        item_portion_et.setText(item_portion);
+        item_protein_et.setText(item_protein);
+        item_weight_et.setText(item_weight);
+
 
     }
 
@@ -65,6 +87,12 @@ public class UpdateDeleteData extends Activity {
         params.put("id", id);
         params.put("item",item_name);
         params.put("energy",item_energy);
+        params.put("portion",item_portion);
+        params.put("weight",item_weight);
+        params.put("carbs",item_carbs);
+        params.put("protein",item_protein);
+        params.put("fats", item_fats);
+        params.put("fiber",item_fiber);
 
         CustomRequest update_request = new CustomRequest(Request.Method.POST,update_url,
                 params, new Response.Listener<JSONObject>() {

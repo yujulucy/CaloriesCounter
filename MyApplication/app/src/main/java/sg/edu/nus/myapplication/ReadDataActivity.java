@@ -32,6 +32,13 @@ public class ReadDataActivity extends ListActivity {
     public static final String ITEM_ID = "id";
     public static final String ITEM_ENERGY = "energy";
     public static final String ITEM_NAME = "item";
+    public static final String ITEM_PORTION = "portion";
+    public static final String ITEM_WEIGHT = "weight";
+    public static final String ITEM_CARBS = "carbs";
+    public static final String ITEM_PROTEIN = "protein";
+    public static final String ITEM_FIBER = "fiber";
+    public static final String ITEM_FATS = "fats";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,12 +76,21 @@ public class ReadDataActivity extends ListActivity {
                                     item.put(ITEM_NAME,
                                             jobj.getString(ITEM_NAME));
                                     item.put(ITEM_ID, jobj.getString(ITEM_ID));
+                                    item.put(ITEM_CARBS, jobj.getString(ITEM_CARBS));
+                                    item.put(ITEM_FATS, jobj.getString(ITEM_FATS));
+                                    item.put(ITEM_PORTION,jobj.getString(ITEM_PORTION));
+                                    item.put(ITEM_WEIGHT, jobj.getString(ITEM_WEIGHT));
+                                    item.put(ITEM_FIBER, jobj.getString(ITEM_FIBER));
+                                    item.put(ITEM_PROTEIN,jobj.getString(ITEM_PROTEIN));
 
                                     Item_List.add(item);
 
                                 } // for loop ends
 
-                                String[] from = {ITEM_ENERGY, ITEM_NAME,ITEM_ID};
+                                // this array pushes in the data in order
+                                String[] from = {ITEM_ENERGY,ITEM_NAME,ITEM_CARBS,ITEM_FATS,ITEM_FIBER,
+                                        ITEM_PORTION,ITEM_PROTEIN, ITEM_WEIGHT,
+                                        ITEM_ENERGY};
                                // int[] to = {R.id.item_energy, R.id.item_name,R.id.item_id};
                                 int[] to = {R.id.item_energy, R.id.item_name};
 

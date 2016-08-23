@@ -10,8 +10,11 @@
         android:layout_height="wrap_content"
         android:text="Update"
         android:onClick="update"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_above="@+id/button2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/modify_fiber"
+        android:layout_alignEnd="@+id/modify_fiber" />
 
     <Button
         android:id="@+id/button2"
@@ -19,10 +22,12 @@
         android:layout_height="wrap_content"
         android:text="Delete"
         android:onClick="delete"
-        android:layout_marginTop="53dp"
-        android:layout_below="@+id/button1"
+        android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/button1"
-        android:layout_alignStart="@+id/button1" />
+        android:layout_alignStart="@+id/button1"
+        android:layout_marginBottom="67dp"
+        android:layout_alignRight="@+id/modify_fiber"
+        android:layout_alignEnd="@+id/modify_fiber" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -33,20 +38,21 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:paddingTop="10dp"
-        android:paddingLeft="20dp" />
+        android:paddingTop="60dp"
+        android:paddingLeft="10dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Energy"
+        android:text="Serving Portion"
         android:id="@+id/textView15"
         android:layout_below="@+id/textView8"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:paddingLeft="20dp"
-        android:paddingTop="10dp" />
+        android:paddingLeft="10dp"
+        android:paddingTop="15dp"
+        android:layout_toEndOf="@id/textView8" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -55,19 +61,184 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/button1"
-        android:layout_alignStart="@+id/button1"
-        android:hint="item" />
+        android:hint="item"
+        android:paddingTop="60dp"
+        android:layout_toRightOf="@+id/textView15"
+        android:layout_toEndOf="@+id/textView15"
+        android:textColor="#37deff" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/modify_portion"
+        android:hint="serving portion"
+        android:layout_below="@+id/modify_item_et"
+        android:layout_toRightOf="@+id/textView15"
+        android:layout_alignRight="@+id/modify_item_et"
+        android:layout_alignEnd="@+id/modify_item_et"
+        android:textColor="#37deff" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/modify_weight"
+        android:hint="serving weight"
+        android:layout_below="@+id/modify_portion"
+        android:layout_alignRight="@+id/modify_portion"
+        android:layout_alignEnd="@+id/modify_portion"
+        android:layout_alignLeft="@+id/modify_portion"
+        android:layout_alignStart="@+id/modify_portion"
+        android:textColor="#37deff" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/modify_energy_et"
         android:hint="energy"
-        android:layout_below="@+id/modify_item_et"
-        android:layout_alignLeft="@+id/modify_item_et"
-        android:layout_alignStart="@+id/modify_item_et"
+        android:layout_below="@+id/modify_weight"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignLeft="@+id/modify_weight"
+        android:layout_alignStart="@+id/modify_weight"
+        android:textColor="#37deff" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/modify_carbs"
+        android:hint="carbohydrates"
+        android:layout_below="@+id/modify_energy_et"
+        android:layout_alignRight="@+id/modify_energy_et"
+        android:layout_alignEnd="@+id/modify_energy_et"
+        android:layout_alignLeft="@+id/modify_energy_et"
+        android:layout_alignStart="@+id/modify_energy_et"
+        android:textColor="#37deff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit"
+        android:id="@+id/textView17"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="40dp"
+        android:layout_alignRight="@+id/modify_item_et"
+        android:layout_alignEnd="@+id/modify_item_et"
+        android:textAlignment="center"
+        android:background="#adf07e"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Serving Weight"
+        android:id="@+id/textView18"
+        android:paddingLeft="10dp"
+        android:paddingTop="15dp"
+        android:layout_below="@+id/textView15"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Energy"
+        android:id="@+id/textView19"
+        android:paddingLeft="10dp"
+        android:paddingTop="14dp"
+        android:layout_below="@+id/textView18"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Carbohydrates"
+        android:id="@+id/textView20"
+        android:paddingLeft="10dp"
+        android:paddingTop="15dp"
+        android:layout_below="@+id/textView19"
+        android:layout_toLeftOf="@+id/modify_energy_et"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Protein"
+        android:id="@+id/textView21"
+        android:paddingLeft="10dp"
+        android:paddingTop="18dp"
+        android:layout_below="@+id/textView20"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/modify_protein"
+        android:hint="protein"
+        android:layout_below="@+id/modify_carbs"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignLeft="@+id/modify_carbs"
+        android:layout_alignStart="@+id/modify_carbs"
+        android:textColor="#37deff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Fats"
+        android:id="@+id/textView22"
+        android:paddingTop="10dp"
+        android:layout_below="@+id/modify_protein"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:paddingLeft="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Fiber"
+        android:id="@+id/textView23"
+        android:paddingLeft="10dp"
+        android:paddingTop="18dp"
+        android:layout_below="@+id/textView22"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/modify_fats"
+        android:hint="fats"
+        android:layout_below="@+id/textView21"
+        android:layout_alignRight="@+id/modify_protein"
+        android:layout_alignEnd="@+id/modify_protein"
+        android:layout_above="@+id/textView23"
+        android:layout_alignLeft="@+id/modify_protein"
+        android:layout_alignStart="@+id/modify_protein"
+        android:paddingTop="10dp"
+        android:textColor="#37deff" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/modify_fiber"
+        android:hint="fiber"
+        android:layout_below="@+id/modify_fats"
+        android:layout_alignRight="@+id/modify_fats"
+        android:layout_alignEnd="@+id/modify_fats"
+        android:layout_alignBottom="@+id/textView23"
+        android:layout_alignLeft="@+id/modify_fats"
+        android:layout_alignStart="@+id/modify_fats"
+        android:textColor="#37deff" />
 
 </RelativeLayout>
