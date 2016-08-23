@@ -3,9 +3,15 @@ package sg.edu.nus.myapplication;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.format.Time;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 import org.w3c.dom.Text;
 
@@ -28,6 +34,13 @@ public class FoodDiaryActivity extends Activity {
                 FoodDiaryActivity.this.startActivity(registerIntent);
             }
         });
+
+        Calendar c = Calendar.getInstance();
+        System.out.println("Current time => " + c.getTime());
+
+        SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+        String formattedDate = df.format(c.getTime());
+        tvFoodDate.setText(formattedDate);
 
         tvFoodDate.setOnClickListener(new View.OnClickListener() {
             @Override
