@@ -66,6 +66,14 @@ public class UserAreaActivity extends AppCompatActivity {
             }
         });
 
+        ibPlus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent registerIntent = new Intent(UserAreaActivity.this, AddFoodDataActivity.class);
+                UserAreaActivity.this.startActivity(registerIntent);
+            }
+        });
+
 
     }
 }

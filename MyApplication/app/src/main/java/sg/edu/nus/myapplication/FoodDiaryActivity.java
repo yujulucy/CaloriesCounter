@@ -25,7 +25,13 @@ public class FoodDiaryActivity extends Activity {
         setContentView(R.layout.activity_food_diary);
 
         final Button bBreakfast = (Button) findViewById(R.id.bBreakfast);
+<<<<<<< HEAD
         final TextView tvFoodDate = (TextView) findViewById(R.id.tvFoodDate);
+=======
+        final Button bLunch = (Button) findViewById(R.id.bLunch);
+        final Button bDinner = (Button) findViewById(R.id.bDinner);
+        final Button bSnack = (Button) findViewById(R.id.bSnack);
+>>>>>>> 4a603116f4e2f01d6b74bdb5127007508b1d7419
 
         bBreakfast.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,6 +41,7 @@ public class FoodDiaryActivity extends Activity {
             }
         });
 
+<<<<<<< HEAD
         Calendar c = Calendar.getInstance();
         System.out.println("Current time => " + c.getTime());
 
@@ -46,6 +53,28 @@ public class FoodDiaryActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent registerIntent = new Intent(FoodDiaryActivity.this, CalendarActivity.class);
+=======
+        bLunch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent registerIntent = new Intent(FoodDiaryActivity.this, AddFoodDataActivity.class);
+                FoodDiaryActivity.this.startActivity(registerIntent);
+            }
+        });
+
+        bDinner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent registerIntent = new Intent(FoodDiaryActivity.this, AddFoodDataActivity.class);
+                FoodDiaryActivity.this.startActivity(registerIntent);
+            }
+        });
+
+        bSnack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent registerIntent = new Intent(FoodDiaryActivity.this, AddFoodDataActivity.class);
+>>>>>>> 4a603116f4e2f01d6b74bdb5127007508b1d7419
                 FoodDiaryActivity.this.startActivity(registerIntent);
             }
         });

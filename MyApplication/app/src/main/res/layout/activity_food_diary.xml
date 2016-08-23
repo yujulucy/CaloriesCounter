@@ -29,12 +29,12 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
         android:id="@+id/tvFoodDate"
         android:layout_gravity="center_horizontal"
         android:textSize="30dp"
         android:background="#fbf8f9"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:text="Date" />
 
 
             <TextView
@@ -103,7 +103,7 @@
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:text="+ Add Food"
-        android:id="@+id/button2"
+        android:id="@+id/bLunch"
         android:background="#ffffff"
         android:layout_gravity="center_horizontal"
         android:textColor="#ff6969" />
@@ -134,7 +134,7 @@
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:text="+ Add Food"
-        android:id="@+id/button3"
+        android:id="@+id/bDinner"
         android:background="#ffffff"
         android:layout_gravity="center_horizontal"
         android:textColor="#ff6969" />
@@ -165,7 +165,7 @@
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:text="+ Add Food"
-        android:id="@+id/button4"
+        android:id="@+id/bSnack"
         android:background="#ffffff"
         android:layout_gravity="center_horizontal"
         android:textColor="#ff6969" />
