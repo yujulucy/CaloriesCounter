@@ -108,6 +108,16 @@
         android:layout_gravity="center_horizontal"
         android:textColor="#ff6969" />
 
+    <Button
+        android:layout_width="412dp"
+        android:layout_height="wrap_content"
+        android:text="+ Expand View"
+        android:id="@+id/button"
+        android:background="#ffffff"
+        android:textColor="#ff6969"
+        android:onClick="read"
+        android:layout_gravity="center_horizontal" />
+
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -139,6 +149,16 @@
         android:layout_gravity="center_horizontal"
         android:textColor="#ff6969" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="+ Expand View"
+        android:id="@+id/button11"
+        android:background="#ffffff"
+        android:textColor="#ff6969"
+        android:onClick="read"
+        android:layout_gravity="center_horizontal" />
+
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -169,6 +189,16 @@
         android:background="#ffffff"
         android:layout_gravity="center_horizontal"
         android:textColor="#ff6969" />
+
+    <Button
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:text="+ Expand View"
+        android:id="@+id/button12"
+        android:background="#ffffff"
+        android:textColor="#ff6969"
+        android:onClick="read"
+        android:layout_gravity="center_horizontal" />
 
 </LinearLayout>
 

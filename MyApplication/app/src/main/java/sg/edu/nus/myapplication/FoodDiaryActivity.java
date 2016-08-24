@@ -25,6 +25,7 @@ public class FoodDiaryActivity extends Activity {
         setContentView(R.layout.activity_food_diary);
 
         final Button bBreakfast = (Button) findViewById(R.id.bBreakfast);
+
         final TextView tvFoodDate = (TextView) findViewById(R.id.tvFoodDate);
 
         final Button bLunch = (Button) findViewById(R.id.bLunch);
@@ -32,6 +33,30 @@ public class FoodDiaryActivity extends Activity {
         final Button bSnack = (Button) findViewById(R.id.bSnack);
 
         bBreakfast.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent registerIntent = new Intent(FoodDiaryActivity.this, AddFoodDataActivity.class);
+                FoodDiaryActivity.this.startActivity(registerIntent);
+            }
+        });
+
+        bLunch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent registerIntent = new Intent(FoodDiaryActivity.this, AddFoodDataActivity.class);
+                FoodDiaryActivity.this.startActivity(registerIntent);
+            }
+        });
+
+        bDinner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent registerIntent = new Intent(FoodDiaryActivity.this, AddFoodDataActivity.class);
+                FoodDiaryActivity.this.startActivity(registerIntent);
+            }
+        });
+
+        bSnack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent registerIntent = new Intent(FoodDiaryActivity.this, AddFoodDataActivity.class);
