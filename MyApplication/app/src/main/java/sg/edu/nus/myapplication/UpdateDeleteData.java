@@ -80,6 +80,12 @@ public class UpdateDeleteData extends Activity {
         PD.show();
         item_name = item_name_et.getText().toString();
         item_energy = item_energy_et.getText().toString();
+        item_protein = item_protein_et.getText().toString();
+        item_portion = item_portion_et.getText().toString();
+        item_carbs = item_carbs_et.getText().toString();
+        item_fiber = item_fiber_et.getText().toString();
+        item_fats = item_fats_et.getText().toString();
+        item_weight = item_weight_et.getText().toString();
 
         String update_url = "http://joellehippotutorial.netau.net/update_item.php";
 
