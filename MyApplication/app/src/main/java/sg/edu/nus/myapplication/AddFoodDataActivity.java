@@ -94,11 +94,11 @@ public class AddFoodDataActivity extends Activity {
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("item",item);
                 params.put("portion",portion);
-//                params.put("weight",weight);
-//                params.put("fats",fats);
-//                params.put("carbs",carbs);
-//                params.put("fiber",fiber);
-//                params.put("protein",protein);
+                params.put("weight",weight);
+                params.put("fats",fats);
+                params.put("carbs",carbs);
+                params.put("fiber",fiber);
+                params.put("protein",protein);
                 params.put("energy", energy);
 
                 return params;
