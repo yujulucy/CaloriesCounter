@@ -25,7 +25,7 @@
         <activity android:name=".FoodDiaryActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".UserAreaActivity" />
-        <activity android:name=".CalendarActivity"></activity>
+        <activity android:name=".CalendarActivity"/>
         <activity android:name=".Calculator2"></activity>
     </application>
 
