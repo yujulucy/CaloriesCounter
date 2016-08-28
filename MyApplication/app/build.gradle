@@ -1,15 +1,16 @@
-apply plugin: 'com.android.application'
+//apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
 
     defaultConfig {
-        applicationId "sg.edu.nus.myapplication"
+        //applicationId "sg.edu.nus.myapplication"
         minSdkVersion 15
         targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
+        //versionCode 1
+        //versionName "1.0"
     }
     buildTypes {
         release {
@@ -21,6 +22,10 @@ android {
             debuggable true
         }
     }
+
+    lintOptions {
+        abortOnError false
+    }
 }
 
 dependencies {
@@ -31,3 +36,16 @@ dependencies {
     compile 'com.mcxiaoke.volley:library:1.0.19'
     //compile 'com.android.volley:volley:1.0.0'
 }
+
+task deleteJar(type: Delete) {
+    delete 'release/FoodDiary.jar'
+}
+
+task createJar(type: Copy) {
+    from('build/intermediates/bundles/release/')
+    into('release/')
+    include('classes.jar')
+    rename('classes.jar', 'FoodDiary.jar')
+}
+
+createJar.dependsOn(deleteJar, build)
