@@ -22,12 +22,12 @@
         android:layout_height="wrap_content"
         android:text="Delete"
         android:onClick="delete"
-        android:layout_marginBottom="19dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignLeft="@+id/button1"
+        android:layout_alignStart="@+id/button1"
+        android:layout_marginBottom="67dp"
+        android:layout_alignRight="@+id/modify_fiber"
+        android:layout_alignEnd="@+id/modify_fiber" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -51,7 +51,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:paddingLeft="10dp"
-        android:paddingTop="10dp"
+        android:paddingTop="15dp"
         android:layout_toEndOf="@id/textView8" />
 
     <EditText
@@ -136,7 +136,7 @@
         android:text="Serving Weight"
         android:id="@+id/textView18"
         android:paddingLeft="10dp"
-        android:paddingTop="10dp"
+        android:paddingTop="15dp"
         android:layout_below="@+id/textView15"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -148,7 +148,7 @@
         android:text="Energy"
         android:id="@+id/textView19"
         android:paddingLeft="10dp"
-        android:paddingTop="10dp"
+        android:paddingTop="14dp"
         android:layout_below="@+id/textView18"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -173,7 +173,7 @@
         android:text="Protein"
         android:id="@+id/textView21"
         android:paddingLeft="10dp"
-        android:paddingTop="15dp"
+        android:paddingTop="18dp"
         android:layout_below="@+id/textView20"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -197,11 +197,10 @@
         android:text="Fats"
         android:id="@+id/textView22"
         android:paddingTop="10dp"
-        android:paddingLeft="10dp"
-        android:layout_alignBaseline="@+id/modify_fats"
-        android:layout_alignBottom="@+id/modify_fats"
+        android:layout_below="@+id/modify_protein"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:paddingLeft="10dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -210,8 +209,8 @@
         android:text="Fiber"
         android:id="@+id/textView23"
         android:paddingLeft="10dp"
-        android:paddingTop="10dp"
-        android:layout_alignTop="@+id/modify_fiber"
+        android:paddingTop="18dp"
+        android:layout_below="@+id/textView22"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -220,24 +219,26 @@
         android:layout_height="wrap_content"
         android:id="@+id/modify_fats"
         android:hint="fats"
-        android:paddingTop="10dp"
-        android:textColor="#37deff"
-        android:layout_below="@+id/modify_protein"
+        android:layout_below="@+id/textView21"
         android:layout_alignRight="@+id/modify_protein"
         android:layout_alignEnd="@+id/modify_protein"
+        android:layout_above="@+id/textView23"
         android:layout_alignLeft="@+id/modify_protein"
-        android:layout_alignStart="@+id/modify_protein" />
+        android:layout_alignStart="@+id/modify_protein"
+        android:paddingTop="10dp"
+        android:textColor="#37deff" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/modify_fiber"
         android:hint="fiber"
-        android:textColor="#37deff"
+        android:layout_below="@+id/modify_fats"
         android:layout_alignRight="@+id/modify_fats"
         android:layout_alignEnd="@+id/modify_fats"
-        android:layout_toEndOf="@+id/textView18"
-        android:layout_below="@+id/modify_fats"
-        android:layout_alignLeft="@+id/modify_fats" />
+        android:layout_alignBottom="@+id/textView23"
+        android:layout_alignLeft="@+id/modify_fats"
+        android:layout_alignStart="@+id/modify_fats"
+        android:textColor="#37deff" />
 
 </RelativeLayout>

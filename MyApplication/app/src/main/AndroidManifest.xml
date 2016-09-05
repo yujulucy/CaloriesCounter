@@ -12,7 +12,7 @@
         android:label="Food Diary"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UserAreaActivity">
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,7 +24,7 @@
         <activity android:name=".ReadDataActivity" />
         <activity android:name=".FoodDiaryActivity" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".UserAreaActivity" />
         <activity android:name=".CalendarActivity"/>
         <activity android:name=".Calculator2"></activity>
     </application>
